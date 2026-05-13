@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HokBen Style - Food Market</title>
+    <link rel="stylesheet" href="shoppy.css">
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <h1>🍱 GO FOOD<span>Indonesia</span></h1>
+        <div class="auth-buttons">
+            <button onclick="openModal()">Register / Login</button>
+            <div class="cart-icon">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li onclick="filterMenu('all')">Promo</li>
+        <li onclick="filterMenu('makanan')">Main Course</li>
+        <li onclick="filterMenu('minuman')">Drinks</li>
+        <li onclick="filterMenu('dessert')">Dessert</li>
+    </ul>
+</nav>
+
+<main>
+    <section class="products" id="menu-container">
+        <div class="card makanan">
+            <div class="badge">Best Seller</div>
+            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400" alt="Rice">
+            <h3>Special Bento A</h3>
+            <p>Nasi, Salad, Teriyaki, 2 Egg Roll</p>
+            <div class="price">Rp55.000</div>
+            <button onclick="addToCart('Special Bento A', 55000)">Add to Cart</button>
+        </div>
+        <div class="card makanan">
+            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400" alt="Beef">
+            <h3>Beef Teriyaki</h3>
+            <p>Daging sapi slice premium khas Jepang</p>
+            <div class="price">Rp45.000</div>
+            <button onclick="addToCart('Beef Teriyaki', 45000)">Add to Cart</button>
+        </div>
+        <div class="card makanan">
+            <img src="cyk.webp" alt="Chicken">
+            <h3>Chicken Yakiniku</h3>
+            <p>Ayam grill dengan saus gurih</p>
+            <div class="price">Rp38.000</div>
+            <button onclick="addToCart('Chicken Yakiniku', 38000)">Add to Cart</button>
+        </div>
+        <div class="card makanan">
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400" alt="Fried">
+            <h3>Ebi Furai (3pcs)</h3>
+            <p>Udang goreng tepung renyah</p>
+            <div class="price">Rp35.000</div>
+            <button onclick="addToCart('Ebi Furai', 35000)">Add to Cart</button>
+        </div>
+        <div class="card makanan">
+            <img src="https://images.unsplash.com/photo-1562607394-5abc012a6587?w=400" alt="Nasi">
+            <h3>Nasi Putih Premium</h3>
+            <p>Beras pulen pilihan</p>
+            <div class="price">Rp10.000</div>
+            <button onclick="addToCart('Nasi Putih', 10000)">Add to Cart</button>
+        </div>
+
+        <div class="card minuman">
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400" alt="Ocha">
+            <h3>Ocha Cold</h3>
+            <p>Teh hijau khas Jepang (Refill)</p>
+            <div class="price">Rp12.000</div>
+            <button onclick="addToCart('Ocha Cold', 12000)">Add to Cart</button>
+        </div>
+        <div class="card minuman">
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?w=400" alt="Coffee">
+            <h3>Kopi Susu Gula Aren</h3>
+            <p>Espresso dengan gula aren asli</p>
+            <div class="price">Rp22.000</div>
+            <button onclick="addToCart('Kopi Susu', 22000)">Add to Cart</button>
+        </div>
+        <div class="card minuman">
+            <img src="https://images.unsplash.com/photo-1544145945-f904253d0c7e?w=400" alt="Juice">
+            <h3>Orange Juice</h3>
+            <p>100% Jeruk segar</p>
+            <div class="price">Rp18.000</div>
+            <button onclick="addToCart('Orange Juice', 18000)">Add to Cart</button>
+        </div>
+        <div class="card minuman">
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400" alt="Tea">
+            <h3>Lemon Tea</h3>
+            <p>Segar dengan irisan lemon</p>
+            <div class="price">Rp15.000</div>
+            <button onclick="addToCart('Lemon Tea', 15000)">Add to Cart</button>
+        </div>
+        <div class="card minuman">
+            <img src="https://images.unsplash.com/photo-1543253687-c931c8e01820?w=400" alt="Water">
+            <h3>Mineral Water</h3>
+            <p>600ml Botol dingin</p>
+            <div class="price">Rp8.000</div>
+            <button onclick="addToCart('Mineral Water', 8000)">Add to Cart</button>
+        </div>
+
+        <div class="card dessert">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Pudding">
+            <h3>Chocolate Pudding</h3>
+            <p>Pudding coklat lembut dengan vla</p>
+            <div class="price">Rp20.000</div>
+            <button onclick="addToCart('Chocolate Pudding', 20000)">Add to Cart</button>
+        </div>
+        <div class="card dessert">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400" alt="Cake">
+            <h3>Cheese Cake Slice</h3>
+            <p>Keju panggang gaya Tokyo</p>
+            <div class="price">Rp30.000</div>
+            <button onclick="addToCart('Cheese Cake', 30000)">Add to Cart</button>
+        </div>
+        <div class="card dessert">
+            <img src="https://images.unsplash.com/photo-1579954115545-a95591f28be0?w=400" alt="Ice">
+            <h3>Matcha Ice Cream</h3>
+            <p>Soft serve teh hijau asli</p>
+            <div class="price">Rp15.000</div>
+            <button onclick="addToCart('Matcha Ice', 15000)">Add to Cart</button>
+        </div>
+        <div class="card dessert">
+            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400" alt="Mochi">
+            <h3>Ichigo Mochi</h3>
+            <p>Isian strawberry segar (2pcs)</p>
+            <div class="price">Rp25.000</div>
+            <button onclick="addToCart('Ichigo Mochi', 25000)">Add to Cart</button>
+        </div>
+        <div class="card dessert">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400" alt="Es">
+            <h3>Es Merah Delima</h3>
+            <p>Bengkuang crunchy dengan santan</p>
+            <div class="price">Rp18.000</div>
+            <button onclick="addToCart('Es Merah Delima', 18000)">Add to Cart</button>
+        </div>
+    </section>
+
+    <aside class="cart-box">
+        <h2>Order Summary</h2>
+        <div id="cart-items">
+            <p style="text-align:center; color:#888;">Your cart is empty</p>
+        </div>
+        <div class="total-section">
+            <p>Subtotal: <strong>Rp <span id="total">0</span></strong></p>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Payment</button>
+        </div>
+    </aside>
+</main>
+
+<div id="regModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Create Account</h2>
+        <form id="regForm" onsubmit="handleRegister(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign Up Now</button>
+        </form>
+    </div>
+</div>
+
+<div id="payModal" class="modal">
+    <div class="modal-content">
+        <h2>Payment Selection</h2>
+        <p>Total to pay: <strong>Rp <span id="pay-total">0</span></strong></p>
+        <div class="pay-options">
+            <button onclick="finalPay('GOPAY')">GOPAY</button>
+            <button onclick="finalPay('OVO')">OVO</button>
+            <button onclick="finalPay('Credit Card')">Credit Card</button>
+        </div>
+        <button class="close-pay" onclick="document.getElementById('payModal').style.display='none'">Cancel</button>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Food Market Indonesia. Inspired by HokBen Aesthetics.</p>
+</footer>
+
+<script src="shoppy.js"></script>
+</body>
+</html>

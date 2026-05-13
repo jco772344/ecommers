@@ -1,0 +1,213 @@
+:root {
+    --hokben-yellow: #FFD000;
+    --hokben-red: #E30613;
+    --dark-grey: #333;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: var(--hokben-yellow);
+    padding: 15px 5%;
+    border-bottom: 4px solid var(--hokben-red);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--hokben-red);
+    font-size: 24px;
+}
+
+header h1 span {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.auth-buttons button {
+    background: var(--hokben-red);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--dark-grey);
+    padding: 5px 0;
+}
+
+nav li:hover {
+    color: var(--hokben-red);
+    border-bottom: 2px solid var(--hokben-red);
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    padding: 30px 5%;
+    gap: 30px;
+}
+
+.products {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Card Design */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--hokben-red);
+    color: white;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.price {
+    color: var(--hokben-red);
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card button {
+    width: 100%;
+    background: var(--hokben-yellow);
+    border: 2px solid var(--hokben-red);
+    color: var(--hokben-red);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Sidebar Cart */
+.cart-box {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    height: fit-content;
+    border-top: 5px solid var(--hokben-red);
+}
+
+.total-section {
+    margin-top: 20px;
+    border-top: 2px dashed #ddd;
+    padding-top: 10px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: var(--hokben-red);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pay-options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-grey);
+    color: white;
+    margin-top: 50px;
+}
